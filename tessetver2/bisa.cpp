@@ -2,13 +2,7 @@
 
 bisa::bisa(QObject *parent) : QObject(parent)
 {
-    using grpc::Server;
-    using grpc::ServerBuilder;
-    using grpc::ServerContext;
-    using grpc::Status;
-    using helloworld::Greeter;
-    using helloworld::HelloReply;
-    using helloworld::HelloRequest;
+
 }
 
 bisa::~bisa()
@@ -16,30 +10,12 @@ bisa::~bisa()
 
 }
 
-class GreeterServiceImpl final : public helloworld::Greeter::Service{
-    grpc::Status SayHello(grpc::ServerContext* context, const helloworld::HelloRequest& request, helloworld::HelloReply* response)
-    {
-        std::string prefix("hello w");
-        response->set_message(prefix + request.name());
-        return grpc::Status::OK;
-    }
 
-};
 
 void bisa::mulai()
 {
-    std::string server_address("0.0.0.0:50051");
-    GreeterServiceImpl service;
 
-    grpc::EnableDefaultHealthCheckService(true);
-    grpc::reflection::InitProtoReflectionServerBuilderPlugin();
-    grpc::ServerBuilder builder;
-
-    builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
-    builder.RegisterService(&service);
-    std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
-    server->Wait();
-    return;
+   // return;
 }
 
 
