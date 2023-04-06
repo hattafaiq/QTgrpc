@@ -2,7 +2,13 @@
 #define BISA_H
 
 #include <QObject>
-
+#include <iostream>
+#include "helloworld.grpc.pb.h"
+#include <memory>
+#include <string>
+#include <grpcpp/ext/proto_server_reflection_plugin.h>
+#include <grpcpp/grpcpp.h>
+#include <grpcpp/health_check_service_interface.h>
 
 class bisa: public QObject
 {
@@ -15,8 +21,7 @@ public:
 private:
 
 public slots:
-
-
 };
+
 
 #endif // BISA_H
