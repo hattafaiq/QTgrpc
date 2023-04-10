@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+340064342aff8ef142f647c0f47a2204 keyvaluestore.pb.cc

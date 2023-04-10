@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+2f037602aa05300ca1880e929ebc5629 stringreverse.pb.cc

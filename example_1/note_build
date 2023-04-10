@@ -1,0 +1,8 @@
+note build
+create CMakelists.text
+change the fiel proto
+$ cmake -DCMAKE_PREFIX_PATH=$MY_INSTALL_DIR .
+$ make
+
+taraaaaa
+u can use grpc.pb.h grpc.pb.cc

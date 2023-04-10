@@ -1,3 +1,8 @@
+////////
+/// protobuf versi 3.21.12
+/// grcp versi 1.53.0
+///
+
 #include "bisa.h"
 
 bisa::bisa(QObject *parent) : QObject(parent)
@@ -13,7 +18,7 @@ bisa::bisa(QObject *parent) : QObject(parent)
     class GreeterServiceImpl final : public Greeter::Service {
       Status SayHello(ServerContext* context, const HelloRequest* request,
                       HelloReply* reply) override {
-        std::string prefix("Hello ");
+        std::string prefix("Faiq ");
         reply->set_message(prefix + request->name());
         return Status::OK;
       }
@@ -48,7 +53,6 @@ void bisa::mulai()
 {
 
 }
-
 
 //bikin protobuf jadi duapesan
 //// Create a message and fill it with data
