@@ -18,45 +18,25 @@ class MathTestClient {
     public:
         MathTestClient(std::shared_ptr<Channel> channel) : stub_(MathTest::NewStub(channel)) {}
 
-//    int sendRequest(int a, int b) {
-//        MathRequest request;
-
-//        request.set_a(a);
-//        request.set_b(b);
-
-//        MathReply reply;
-
-//        ClientContext context;
-
-//        Status status = stub_->sendRequest(&context, request, &reply);
-
-//        if(status.ok()){
-//            return reply.result();
-//        } else {
-//            std::cout << status.error_code() << ": " << status.error_message() << std::endl;
-//            return -1;
-//        }
-//    }
         int sendRequest(int a, int b) {
             MathRequest request;
 
             request.set_a(a);
             request.set_b(b);
 
-            //MathReply reply;
             Mathhasil hasil;
 
             ClientContext context;
 
-            //Status status = stub_->sendRequest(&context, request, hasil);
             Status status = stub_->sendarray(&context, request, &hasil);
 
             if(status.ok()){
+                std::string setting_header;
+              //  hasil.
                 for (int i = 0; i < hasil.result_size(); i++) {
                     int value = hasil.result(i);
                     std::cout << value << std::endl;
                   }
-                //return hasil.result();
             } else {
                 std::cout << status.error_code() << ": " << status.error_message() << std::endl;
                 return -1;

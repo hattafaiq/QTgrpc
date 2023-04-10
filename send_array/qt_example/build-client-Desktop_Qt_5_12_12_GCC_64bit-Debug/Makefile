@@ -235,6 +235,7 @@ DIST          = /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_post.prf \
+		../client/.qmake.stash \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/default_pre.prf \
@@ -443,6 +444,7 @@ Makefile: ../client/client.pro /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/q
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/default_pre.prf \
@@ -636,6 +638,7 @@ Makefile: ../client/client.pro /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/q
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/default_pre.prf:
