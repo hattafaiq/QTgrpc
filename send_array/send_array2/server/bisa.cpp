@@ -103,7 +103,7 @@ float data_baru1[] = {0.062790566364915	,
                       -0.062785882804033	};
 
 #include "bisa.h"
-
+#include <QDebug>
 bisa::bisa(QObject *parent) : QObject(parent)
 {
     using grpc::Server;
@@ -149,6 +149,8 @@ bisa::bisa(QObject *parent) : QObject(parent)
         std::vector<float> dest(data_baru1, data_baru1 + n);
         google::protobuf::RepeatedField<float> data(dest.begin(), dest.end());
         hasil->mutable_result_float()->Swap(&data);
+//coba buat struct
+// https://stackoverflow.com/questions/19201488/converting-struct-to-char-and-back
 //------------------------////////////////////////////////////////////////------------------------//
 
 //        std::vector<float> fData = {2.09,2.1,2.11,2.12,2.13,2.15,2.16};
@@ -158,6 +160,21 @@ bisa::bisa(QObject *parent) : QObject(parent)
 
 //-------------------------------------------------------------------// sample float array
 //coba float array atau coba struct dijadiin char
+
+        char buffer[100*sizeof(float)];
+        memcpy(buffer,&data_baru1,100*sizeof(float));
+        qDebug()<<"char:"<<buffer;
+        std::string s(buffer);
+        std::cout << s << std::endl;
+        float floatArray[100];
+//        for(int i=0; i<100; ++i) {
+//           floatArray[i] = (float) buffer[i];
+//           qDebug()<<floatArray[i];
+//        }
+        memcpy(floatArray,buffer,100*sizeof(float));
+        for(int i=0; i<100; ++i) {
+        qDebug()<<floatArray[i];
+        }
         return Status::OK;
     }
 
@@ -185,3 +202,12 @@ void bisa::mulai()
 {
 
 }
+
+//float a;
+//char buffer[sizeof(float)];
+//memcpy(buffer,&a,sizeof(float));
+
+//const char* ch = "Welcome to GeeksForGeeks";
+//    string s(ch);
+//    cout << s;
+//    return 0;
