@@ -1,0 +1,31 @@
+
+syntax = "proto3";
+
+package routeguide;
+
+service RouteGuide {
+  rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+  rpc komdat(stream Routekomdat) returns (stream Routekomdat) {}
+  rpc baru(stream Routebaru) returns (stream Routebaru) {}
+}
+
+message Point {
+  int32 latitude = 1;
+  int32 longitude = 2;
+}
+
+message RouteNote {
+  Point location = 1;
+  string message = 2;
+}
+
+message Routekomdat {
+  string header = 1;
+  int32 data = 2;
+}
+
+message Routebaru {
+  string header = 1;
+  int32 data = 2;
+  repeated float data_f = 3;
+}

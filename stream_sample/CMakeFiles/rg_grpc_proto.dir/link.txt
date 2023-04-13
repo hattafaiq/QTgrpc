@@ -1,0 +1,2 @@
+/usr/bin/ar qc librg_grpc_proto.a  CMakeFiles/rg_grpc_proto.dir/route_guide.grpc.pb.cc.o CMakeFiles/rg_grpc_proto.dir/route_guide.pb.cc.o
+/usr/bin/ranlib librg_grpc_proto.a
