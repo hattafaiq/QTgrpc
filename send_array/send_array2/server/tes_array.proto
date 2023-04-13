@@ -21,6 +21,8 @@ message MathReply {
 }
 
 message Mathhasil {
-    string header = 1;
-    repeated float result_float = 2;
+    int32 param =1;
+    int32 times = 2;
+    bytes  data = 3;
+    //repeated float result_float = 2;
 }

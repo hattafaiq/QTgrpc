@@ -119,44 +119,32 @@ bisa::bisa(QObject *parent) : QObject(parent)
     class MathServiceImplementation final : public MathTest::Service {
     Status sendarray(ServerContext* context,const MathRequest* request,Mathhasil* hasil)
         override {
-//        int a = request->a();
-//        int b = request->b();
-//        char c[] = {};
-//        std::string s;
-//        s = c;
-//        std::cout << s << std::endl;
-        char buffer[100*sizeof(float)];
-        memcpy(buffer,&data_baru1,100*sizeof(float));
-       // hasil->set_header(buffer);
-//        char str[100*sizeof(float)] = "";
-//        char temp[20];
+        if(request->a()==1){
+            hasil->set_header("sudah sampai");
+            std::cout << "Req: " << request->a() <<" | Resp: " << hasil->header() << std::endl;
 
-//        for(int i = 0; i < sizeof(data_baru1)/sizeof(data_baru1[0]); i++) {
-//            sprintf(temp, "%.3f, ", data_baru1[i]);
-//            strcat(str, temp);
-//        }
-     //   qDebug()<<"s:"<<str;
-        ///////////////////////////////////////////
-        int n = sizeof (data_baru1) / sizeof (data_baru1[0]);
-        std::vector<float> dest(data_baru1, data_baru1 + n);
-        google::protobuf::RepeatedField<float> data(dest.begin(), dest.end());
-        hasil->mutable_result_float()->Swap(&data);
+            char buffer[100*sizeof(float)];
+            memcpy(buffer,&data_baru1,100*sizeof(float));
 
-        //coba float array atau coba struct dijadiin char
+            int n = sizeof (data_baru1) / sizeof (data_baru1[0]);
+            std::vector<float> dest(data_baru1, data_baru1 + n);
+            google::protobuf::RepeatedField<float> data(dest.begin(), dest.end());
+            hasil->mutable_result_float()->Swap(&data);
+        }
 
-       // std::string k = buffer;
+        if(request->a()==2){
+            hasil->set_header("ok mantap");
+            std::cout << "Req: " << request->a() <<" | Resp: " << hasil->header() << std::endl;
 
-//        [libprotobuf ERROR /home/fh/grpc/proto_1/grpc/grpc/third_party/protobuf/src/google/protobuf/wire_format_lite.cc:618]
-        //String field 'mathtest.Mathhasil.header' contains invalid UTF-8 data when parsing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes.
-//        qDebug()<<"char:"<<buffer;
-//        std::string s(buffer);
-//        std::cout << s << std::endl;
+            char buffer[100*sizeof(float)];
+            memcpy(buffer,&data_baru1,100*sizeof(float));
 
-//        float floatArray[100];
-       // memcpy(floatArray,buffer,100*sizeof(float));
-//        for(int i=0; i<100; ++i) {
-//        qDebug()<<floatArray[i];
-//        }
+            int n = sizeof (data_baru1) / sizeof (data_baru1[0]);
+            std::vector<float> dest(data_baru1, data_baru1 + n);
+            google::protobuf::RepeatedField<float> data(dest.begin(), dest.end());
+            hasil->mutable_result_float()->Swap(&data);
+        }
+
         return Status::OK;
         }
     };

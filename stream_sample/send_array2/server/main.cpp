@@ -42,9 +42,9 @@ class RouteGuideImpl final : public RouteGuide::Service {
     while (stream->Read(&note)) {
       std::unique_lock<std::mutex> lock(mu_);
         std::cout << "--- " << note.data() <<std::endl;
-        if(note.data()==0){
+        if(note.data()==1){
           for (const Routekomdat& n : received_notes_k) {
-              if (n.data() == 0) {
+              if (n.data() == 1) {
                 stream->Write(n);
                 std::cout << "cek1- "<<n.header() <<std::endl;
                 }
@@ -58,7 +58,6 @@ class RouteGuideImpl final : public RouteGuide::Service {
 }
 
 private:
- // std::vector<Feature> feature_list_;
   std::mutex mu_;
   std::vector<RouteNote> received_notes_;
   std::vector<Routekomdat> received_notes_k;

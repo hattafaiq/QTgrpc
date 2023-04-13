@@ -40,22 +40,36 @@ class MathTestClient {
             request.set_a(a);
             request.set_b(b);
 
-            //MathReply reply;
             Mathhasil hasil;
 
             ClientContext context;
 
-            //Status status = stub_->sendRequest(&context, request, hasil);
             Status status = stub_->sendarray(&context, request, &hasil);
 
             if(status.ok()){
-                std::string setting_header = hasil.header();
-                std::cout << setting_header << std::endl;
+               // std::string setting_header = hasil.header();
+                if(hasil.header() == "sudah sampai"){
+                    std::cout << " -------> " << hasil.header() << " <-------"<< std::endl;
+                    request.set_a(2);
+                    for (int i = 0; i < hasil.result_float_size(); i++) {
+                           float value2 = hasil.result_float(i);
+                           //std::cout << "------------------>>" << std::endl;
+                           std::cout << value2 << std::endl;
+                      }
+                    std::cout << "------------------>>" << std::endl;
+                }
 
-                for (int i = 0; i < hasil.result_float_size(); i++) {
-                       float value2 = hasil.result_float(i);
-                       std::cout << value2 << std::endl;
-                  }
+                if(hasil.header() == "ok mantap"){
+                    std::cout << " -------> " <<hasil.header() << " <-------"<< std::endl;
+                    request.set_a(2);
+                    for (int i = 0; i < hasil.result_float_size(); i++) {
+                           float value2 = hasil.result_float(i);
+                           //std::cout << "------------------>>" << std::endl;
+                           std::cout << value2 << std::endl;
+                      }
+                    std::cout << "------------------>>" << std::endl;
+                }
+
 
             } else {
                 std::cout << status.error_code() << ": " << status.error_message() << std::endl;

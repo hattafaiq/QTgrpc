@@ -58,45 +58,15 @@ class RouteGuideClient {
  //   routeguide::ParseDb(db, &feature_list_);
   }
 
-//void RouteChat() {
-//ClientContext context;
-//std::shared_ptr<ClientReaderWriter<RouteNote, RouteNote> > stream(stub_->RouteChat(&context));
-//std::thread writer([stream]() {
-//  std::vector<RouteNote> notes{MakeRouteNote("First message", 0, 0),
-//                               MakeRouteNote("Second message", 0, 1),
-//                               MakeRouteNote("Third message", 1, 0),
-//                               MakeRouteNote("Fourth message", 0, 0)};
-//  for (const RouteNote& note : notes) {
-//    std::cout << "Sending message " << note.message() << " at "
-//              << note.location().latitude() << ", "
-//              << note.location().longitude() << std::endl;
-//    stream->Write(note);
-//  }
-//  stream->WritesDone();
-//});
-
-//RouteNote server_note;
-//while (stream->Read(&server_note)) {
-//  std::cout << "Got message " << server_note.message() << " at "
-//            << server_note.location().latitude() << ", "
-//            << server_note.location().longitude() << std::endl;
-//}
-//writer.join();
-//Status status = stream->Finish();
-//if (!status.ok()) {
-//  std::cout << "RouteChat rpc failed." << std::endl;
-//}
-//}
-
 void komdat() {
 ClientContext context;
 std::shared_ptr<ClientReaderWriter<Routekomdat, Routekomdat> > stream(stub_->komdat(&context));
 std::thread writer([stream]() {
-  std::vector<Routekomdat> notes{MakeRoutekomdat("First message", 0),
-                               MakeRoutekomdat("Second message", 0),
+  std::vector<Routekomdat> notes{MakeRoutekomdat("First message", 1),
+                               MakeRoutekomdat("Second message", 1),
                                MakeRoutekomdat("Third message", 1),
-                               MakeRoutekomdat("Fourth message", 0),
-                                MakeRoutekomdat("Five message", 0),
+                               MakeRoutekomdat("Fourth message", 1),
+                                MakeRoutekomdat("Five message", 1),
                                 MakeRoutekomdat("Six message", 1)};
   for (const Routekomdat& note : notes) {
     std::cout << "Sending message " << note.header() << " at " << note.data() << std::endl;
