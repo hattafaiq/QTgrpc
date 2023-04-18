@@ -7,6 +7,7 @@ service MathTest {
     // Function invoked to send the request
     rpc sendRequest (MathRequest) returns (MathReply) {}
     rpc sendarray (MathRequest) returns (Mathhasil) {}
+    rpc softhaliza (RecBro) returns (datablob) {}
 }
 
 // The request message containing requested numbers
@@ -21,8 +22,18 @@ message MathReply {
 }
 
 message Mathhasil {
-    int32 param =1;
-    int32 times = 2;
-    bytes  data = 3;
-    //repeated float result_float = 2;
+    string header = 1;
+    repeated float result_float = 2;
+}
+
+message RecBro {
+    int32 MintaTipe = 1;
+    int32 MintaParam = 2;
+}
+
+message datablob {
+    int32 tipe_data = 1;
+    int32 param = 2;
+    int32 timeEpoch = 3;
+    bytes dataku = 4;
 }

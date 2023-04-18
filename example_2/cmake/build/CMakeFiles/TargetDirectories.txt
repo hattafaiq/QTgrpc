@@ -1,5 +1,0 @@
-/home/faiqhatta/Documents/grpc/examples/cpp/keyvaluestore/cmake/build/CMakeFiles/rebuild_cache.dir
-/home/faiqhatta/Documents/grpc/examples/cpp/keyvaluestore/cmake/build/CMakeFiles/edit_cache.dir
-/home/faiqhatta/Documents/grpc/examples/cpp/keyvaluestore/cmake/build/CMakeFiles/server.dir
-/home/faiqhatta/Documents/grpc/examples/cpp/keyvaluestore/cmake/build/CMakeFiles/client.dir
-/home/faiqhatta/Documents/grpc/examples/cpp/keyvaluestore/cmake/build/CMakeFiles/kvs_grpc_proto.dir

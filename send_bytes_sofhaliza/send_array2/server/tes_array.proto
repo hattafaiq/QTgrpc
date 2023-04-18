@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package mathtest;
+
+
+service MathTest {
+    rpc SendRequest (MathRequest) returns (MathReply) {}
+    rpc Sendarray (MathRequest) returns (Mathhasil) {}
+    rpc Softhaliza (RecBro) returns (Datablob) {}
+}
+
+
+message MathRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message MathReply {
+    int32 result = 1;
+}
+
+message Mathhasil {
+    string header = 1;
+    repeated float result_float = 2;
+}
+
+message RecBro {
+    string header = 1;
+    int32 totalpaket = 2;
+    int32 paket_ke = 3;
+    int32 MintaTipe = 4;
+    int32 MintaParam = 5;
+}
+
+message Datablob {
+    string header = 1;
+    int32 totalpaket = 2;
+    int32 paket_ke = 3;
+    int32 tipe_data = 4;
+    int32 param = 5;
+    int32 timeEpoch = 6;
+    bytes dataku = 7;
+}
