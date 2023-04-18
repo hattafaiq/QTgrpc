@@ -19,9 +19,9 @@ public:
    explicit bisa(QObject *parent=nullptr);
    virtual ~bisa();
    void mulai();
-   void check_db_exist(QString filename, int count_db);
-   void load_database(QString filename, int count_db);
-
+   void check_db_exist(QString filename, int count_db, QByteArray data);
+   void load_database(QString filename, int count_db, QByteArray data);
+   //void proses_q( QSqlQuery *q, const char *s, ...);
 private:
 
 public slots:
