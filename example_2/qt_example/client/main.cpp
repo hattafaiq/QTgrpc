@@ -34,9 +34,13 @@ class GreeterClient {
     Status status = stub_->SayHello(&context, request, &reply);
 
     if (status.ok()) {
-        for(int i=0; i<reply.datarr_size(); ++i) {
-        std::cout << reply.datarr(i) << std::endl;
-        }
+        std::cout << reply.datablob().size() << std::endl;
+        //std::cout << reply.datablob() << std::endl;
+
+//        for(int i=0; i<reply.datarr_size(); ++i) {
+//        std::cout << reply.datarr(i) << std::endl;
+
+//        }
       return reply.message();
     } else {
       std::cout << status.error_code() << ": " << status.error_message()

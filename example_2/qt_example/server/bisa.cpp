@@ -22,12 +22,13 @@ void bisa::mulai()
 
 void bisa::check_db_exist(QString filename, int count_db, QByteArray data)
 {
-    QFile file("DB_masbekti.dbb");
+   // QFile file("DB_masbekti.dbb");
+    QFile file(filename);
 
     if(file.exists()== true)
     {
         //QFileInfo finfo(file.fileName());
-        this->load_database("DB_masbekti.dbb",count_db++, data);
+        this->load_database(filename,count_db++, data);
     }
     else
     {
@@ -82,6 +83,7 @@ void bisa::load_database(QString filename, int count_db, QByteArray data)
     con_name = QString("LOC_DB%1").arg(count_db);
     QSqlDatabase db =QSqlDatabase::addDatabase("QSQLITE",con_name);
     db.setDatabaseName(filename);
+    QByteArray data1;
 
     if(!db.open())
     {
@@ -92,18 +94,20 @@ void bisa::load_database(QString filename, int count_db, QByteArray data)
     {
         qDebug()<<"db buka";
         QSqlQuery buka(db);
-        buka.prepare("select data from data_41_tipe where id=:id");
-        buka.bindValue(":id", 1);
+       // buka.prepare("select data from data_41_tipe where id=:id");
+        buka.prepare("select data from hallo where size_data=:size_data");
+        buka.bindValue(":size_data", 1000000);
         if(!buka.exec()){
 
         }
         else{
             while( buka.next() )
             {
-                data = buka.value("data").toByteArray();
+                data1 = buka.value("data").toByteArray();
+                qDebug()<<data1.size();
                 qDebug()<<"---------------------------------------";
-                qDebug()<<data;
-               // memcpy( &data[0],(char *) dataku, sizeof(dataku.data()));
+                memcpy( &data,(char *) &data1, sizeof(data1.data()));
+                qDebug()<<data.size();
             }
         }
     }

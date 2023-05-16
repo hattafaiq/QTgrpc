@@ -4,7 +4,7 @@
 #include <string>
 #include "helloworld.grpc.pb.h"
 #include "helloworld.pb.h"
-
+#include <QDebug>
 #include <iostream>
 #include <memory>
 #include <string>
@@ -4142,25 +4142,48 @@ class GreeterServiceImpl final : public Greeter::Service {
     std::string prefix("Hello ");
     reply->set_message(prefix + request->name());
     bisa bis;
-    QByteArray ay;
-    bis.check_db_exist("DB_masbekti.dbb",1, ay);
-    /// | t_rute (26) | t_set_param (88) --> dimasukkan ke buffer t_kom_dat.data (800) | DATA (Wave (point) + Spektrum (lines)) |
-    // std::string => QByteArray
-//    QByteArray byteArray(stdString.c_str(), stdString.length());
-      // QByteArray => std::string
-    std::string stdString(ay.constData(), ay.length());
+    QString filename = "dataku.ovm";
+    QString con_name;
+    con_name = QString("LOC_DB%1").arg(1);
+    QSqlDatabase db =QSqlDatabase::addDatabase("QSQLITE",con_name);
+    db.setDatabaseName(filename);
+    QByteArray data1;
 
-    char array [4000*sizeof(float)];
-    memcpy(array, &data_baru2, 4000*sizeof(float));
-    int a_size = sizeof(array) / sizeof(char);
-    std::string s_a = convertToString(array, a_size);
-    //reply->set_datablob(s_a);
+    if(!db.open())
+    {
+        qDebug()<<"db gak kebukak";
+        //return;
+    }
+    else
+    {
+        qDebug()<<"db buka";
+        QSqlQuery buka(db);
+       // buka.prepare("select data from data_41_tipe where id=:id");
+        buka.prepare("select data from hallo where size_data=:size_data");
+        buka.bindValue(":size_data", 4000000);
+        if(!buka.exec()){
+
+        }
+        else{
+            while( buka.next() )
+            {
+                data1 = buka.value("data").toByteArray();
+                qDebug()<<data1.size();
+                qDebug()<<"---------------------------------------";
+//                memcpy( &data,(char *) &data1, sizeof(data1.data()));
+//                qDebug()<<data.size();
+            }
+        }
+    }
+    qDebug() << "ukuran data" << data1.size();
+    std::string stdString(data1.constData(), data1.length());
     reply->set_datablob(stdString);
-    std::cout << "message:" << s_a;
-    int n = sizeof (data_baru2) / sizeof (data_baru2[0]);
-    std::vector<float> dest(data_baru2, data_baru2 + n);
-    google::protobuf::RepeatedField<float> data(dest.begin(), dest.end());
-    reply->mutable_datarr()->Swap(&data);
+    qDebug()<<"done";
+   // std::cout << "message:" << s_a;
+//    int n = sizeof (data_baru2) / sizeof (data_baru2[0]);
+//    std::vector<float> dest(data_baru2, data_baru2 + n);
+//    google::protobuf::RepeatedField<float> data(dest.begin(), dest.end());
+//    reply->mutable_datarr()->Swap(&data);
     return Status::OK;
   }
 };
