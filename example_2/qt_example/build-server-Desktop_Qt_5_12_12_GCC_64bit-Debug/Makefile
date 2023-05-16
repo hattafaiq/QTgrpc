@@ -1742,6 +1742,20 @@ main.o: ../server/main.cpp /opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QCoreApp
 		/../usr/local/include/grpcpp/support/proto_buffer_reader.h \
 		/../usr/local/include/grpcpp/support/proto_buffer_writer.h \
 		/../usr/local/include/grpcpp/support/stub_options.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		/../usr/local/include/absl/flags/flag.h \
 		/../usr/local/include/absl/flags/config.h \
 		/../usr/local/include/absl/flags/internal/flag.h \

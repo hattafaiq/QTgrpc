@@ -4139,6 +4139,7 @@ std::string convertToString(char* a, int size)
 
 class GreeterServiceImpl final : public Greeter::Service {
   Status SayHello(ServerContext* context, const HelloRequest* request, HelloReply* reply) override {
+
     std::string prefix("Hello ");
     reply->set_message(prefix + request->name());
     bisa bis;
@@ -4148,7 +4149,8 @@ class GreeterServiceImpl final : public Greeter::Service {
     QSqlDatabase db =QSqlDatabase::addDatabase("QSQLITE",con_name);
     db.setDatabaseName(filename);
     QByteArray data1;
-
+    QByteArray hard;
+    hard.resize(10000000);
     if(!db.open())
     {
         qDebug()<<"db gak kebukak";
@@ -4168,16 +4170,14 @@ class GreeterServiceImpl final : public Greeter::Service {
             while( buka.next() )
             {
                 data1 = buka.value("data").toByteArray();
-                qDebug()<<data1.size();
                 qDebug()<<"---------------------------------------";
-//                memcpy( &data,(char *) &data1, sizeof(data1.data()));
-//                qDebug()<<data.size();
             }
         }
     }
-    qDebug() << "ukuran data" << data1.size();
-    std::string stdString(data1.constData(), data1.length());
-    reply->set_datablob(stdString);
+    qDebug() << "ukuran data" << hard.size();
+    //std::string stdString(data1.constData(), data1.length());
+    std::string stdString2(hard.constData(), hard.length());
+    reply->set_datablob(stdString2);
     qDebug()<<"done";
    // std::cout << "message:" << s_a;
 //    int n = sizeof (data_baru2) / sizeof (data_baru2[0]);
@@ -4190,18 +4190,23 @@ class GreeterServiceImpl final : public Greeter::Service {
 
 void RunServer(uint16_t port) {
 
-  std::string server_address = absl::StrFormat("0.0.0.0:%d", port);
-  GreeterServiceImpl service;
+    ServerBuilder builder;
+    // Listen on the given address without any authentication mechanism.
 
-  grpc::EnableDefaultHealthCheckService(true);
-  grpc::reflection::InitProtoReflectionServerBuilderPlugin();
-  ServerBuilder builder;
-  // Listen on the given address without any authentication mechanism.
-  builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
-  builder.RegisterService(&service);
-  std::unique_ptr<Server> server(builder.BuildAndStart());
-  std::cout << "Server listening on " << server_address << std::endl;
-  server->Wait();
+    builder.SetMaxSendMessageSize(1024 * 1024 * 1024);
+    builder.SetMaxMessageSize(1024 * 1024 * 1024);
+    builder.SetMaxReceiveMessageSize(1024 * 1024 * 1024);
+    std::string server_address = absl::StrFormat("0.0.0.0:%d", port);
+    GreeterServiceImpl service;
+
+    grpc::EnableDefaultHealthCheckService(true);
+    grpc::reflection::InitProtoReflectionServerBuilderPlugin();
+
+    builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+    builder.RegisterService(&service);
+    std::unique_ptr<Server> server(builder.BuildAndStart());
+    std::cout << "Server listening on " << server_address << std::endl;
+    server->Wait();
 }
 
 int main(int argc, char** argv) {

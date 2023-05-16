@@ -3,6 +3,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include "grpcpp/support/channel_arguments.h"
 
 #include "absl/flags/flag.h"
 #include "absl/flags/parse.h"
@@ -14,9 +15,11 @@ ABSL_FLAG(std::string, target, "192.168.20.62:5000", "Server address");
 using grpc::Channel;
 using grpc::ClientContext;
 using grpc::Status;
+using grpc::ChannelArguments;
 using helloworld::Greeter;
 using helloworld::HelloReply;
 using helloworld::HelloRequest;
+
 
 class GreeterClient {
  public:
@@ -24,11 +27,13 @@ class GreeterClient {
       : stub_(Greeter::NewStub(channel)) {}
    std::string SayHello(const std::string& user) {
     // Data we are sending to the server.
+
+    //grpc::ChannelArguments
+
     HelloRequest request;
     request.set_name(user);
 
     HelloReply reply;
-
     ClientContext context;
 
     Status status = stub_->SayHello(&context, request, &reply);
@@ -55,11 +60,15 @@ class GreeterClient {
 
 int main(int argc, char *argv[])
 {
+
     QCoreApplication a(argc, argv);
     absl::ParseCommandLine(argc, argv);
     std::string target_str = absl::GetFlag(FLAGS_target);
+    grpc::ChannelArguments ch_args;
+    ch_args.SetMaxReceiveMessageSize(-1);
     GreeterClient greeter(
-    grpc::CreateChannel(target_str, grpc::InsecureChannelCredentials()));
+    grpc::CreateCustomChannel(target_str, grpc::InsecureChannelCredentials(), ch_args));
+
     std::string user("world");
     std::string reply = greeter.SayHello(user);
     std::cout << "Greeter received: " << reply << std::endl;
