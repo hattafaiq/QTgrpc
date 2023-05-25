@@ -113,12 +113,3 @@ void bisa::load_database(QString filename, int count_db, QByteArray data)
     }
 
 }
-
-//float a;
-//char buffer[sizeof(float)];
-//memcpy(buffer,&a,sizeof(float));
-
-//const char* ch = "Welcome to GeeksForGeeks";
-//    string s(ch);
-//    cout << s;
-//    return 0;
