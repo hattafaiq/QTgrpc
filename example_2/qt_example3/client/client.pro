@@ -1,6 +1,8 @@
-QT -= gui
 QT += core\
       sql \
+      gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11 c++14 c++17 console
 CONFIG -= app_bundle
@@ -11,13 +13,15 @@ CONFIG -= app_bundle
 HEADERS +=  \
             helloworld.grpc.pb.h \
             helloworld.pb.h \
-            coba_lagi.h 
+            coba_lagi.h  \
+            mainwindow.h
           
 
 SOURCES +=  coba_lagi.cpp \
             helloworld.grpc.pb.cc \
             helloworld.pb.cc \
-            main.cpp
+            main.cpp \
+            mainwindow.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,3 +51,6 @@ unix:!macx: LIBS += -L$$PWD/../../../../../../../../../usr/local/lib/ -lupb -lgr
 -lprotobuf-lite -lprotoc -lprotobuf
 INCLUDEPATH += $$PWD/../../../../../../../../../usr/local/include
 DEPENDPATH += $$PWD/../../../../../../../../../usr/local/include
+
+FORMS += \
+    mainwindow.ui

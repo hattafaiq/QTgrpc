@@ -21,6 +21,7 @@ using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
+using grpc::Status;
 using helloworld::Greeter2;
 using helloworld::HelloReply;
 using helloworld::HelloRequest;
@@ -40,94 +41,50 @@ std::string convertToString(char* a, int size)
 class GreeterServiceImpl final : public Greeter2::Service {
   Status SayHello(ServerContext* context, const HelloRequest* request, HelloReply* reply) override {
 
-    struct t_rute tRuteData;
-    struct t_statistik_rotat tStatRotate;
-    struct t_setting_param tSetParam;
-    struct t_rute tRuteData4;
-    struct t_statistik_rotat tStatRotate4;
-    struct t_setting_param tSetParam4;
 
-    int ukuran = request->size_all();
-    int data_terima = request->datablob().size();
-    QVector<int> size_array;
-    QByteArray data_parsing[request->size_arr_size()];
-    QByteArray data_total = QByteArray::fromStdString(request->datablob());
-    int value_1;
-    for (int i = 0; i < request->size_arr_size(); i++) {
-        int value = request->size_arr(i);
-        size_array.push_back(request->size_arr(i));
-        //std::cout <<"data ke " << i << " = "<< value << std::endl;
-        data_parsing[i].resize(request->size_arr(i));
-        if(i==0){
-        data_parsing[i]=data_total.left(size_array[i]);
-        value_1 = size_array[i];
+    ////////////////////////////////////////////////////////////
+    /// \brief mulai terima apa saja perintahnya:
+    ///
+    ///
+    ///
+    QVector<int> validasi[3];
+    if(request->name()=="info UPLOAD"){
+        std::cout << "Req " << request->name() << std::endl;
+        std::string prefix("UPLOAD");
+        //reply->set_name(prefix + request->name());
+        reply->set_name(prefix);
+
+        std::cout << "size all: " << request->size_all() << std::endl;
+        if(request->size_arr_size() == request->timeepoch_size()){
+            for(int i=0; i<request->size_arr_size(); i++){
+                std::cout << "size " << i <<":"<< request->size_arr(i) << std::endl;
+                std::cout << "time " << i <<":"<< request->timeepoch(i) << std::endl;
+                std::cout << "tipe " << i <<":"<< request->tipe_data(i) << std::endl;
+                validasi[0].push_back(request->tipe_data(i));
+                validasi[1].push_back(request->timeepoch(i));
+                validasi[2].push_back(request->size_arr(i));
+            }
         }else{
-            data_parsing[i]=data_total.mid(size_array[i]*i,size_array[i]);
+            qDebug()<<"kiriman data rusak";
         }
-
+    }else if(request->name()=="UPLOAD"){
+        std::cout << "UPLOAD Req " << request->name() << std::endl;
+        std::string prefix("Cek");
+        reply->set_name(prefix);
+            //mulai masukin ke database/buffer
     }
-    qDebug()<<"masuk done ----------------------------------------------->>>";
-    for (int i = 0; i < request->size_arr_size(); i++) {
-        qDebug() << "ukurannya nih: "<< data_parsing[i].size();
-        memcpy(&tRuteData,data_parsing[i],sizeof(t_rute));
-
-        if(tRuteData.id_tipe_param == 410 || tRuteData.id_tipe_param == 420 || tRuteData.id_tipe_param == 430){
-            QByteArray dd1 = data_parsing[i].left(sizeof (t_rute));
-            QByteArray dd2 = data_parsing[i].mid(sizeof (t_rute),sizeof (t_setting_param));
-            QByteArray dd3 = data_parsing[i].mid(sizeof (t_rute)+sizeof (t_setting_param),sizeof (t_statistik_rotat));
-            memcpy(&tRuteData, dd1.data(), sizeof(t_rute));
-            memcpy(&tSetParam, dd2.data(), sizeof(t_setting_param));
-            memcpy(&tStatRotate, dd3.data(), sizeof(t_statistik_rotat));
-            qDebug()<< "cek data ke = "<<i;
-            qDebug()<<"tipe param:" <<tRuteData.id_tipe_param <<
-                         "lines:" << tSetParam.fft_lines <<
-                         "fftovrlp:" << tSetParam.fft_overlap<<
-                         "fstart:" << tSetParam.freq_start<<
-                         "fstop:" << tSetParam.freq_stop;
-           qDebug()<< "save done ----------------------------------------------->>> data ke "<<i;
+    else if(request->name()=="Cek"){
+        std::cout << "Cek Req " << request->name() << std::endl;
+        std::string prefix("Selesai");
+        reply->set_name(prefix);
+            //mulai masukin ke database/buffer
         }
-        //else if(fasa){}
-    }
-
-
-//    QByteArray data1 = data_total.left(98474);
-//    QByteArray data2 = data_total.mid(98474,98474);
-//    QByteArray data3 = data_total.mid(98474+98474,98474);
-//    QByteArray data4 = data_total.mid(98474+98474+98474,98474);
-
-//    //qDebug()<<"size data 1" << data1.size();
-
-//    QByteArray dd1 = data1.left(sizeof (t_rute));
-//    QByteArray dd2 = data1.mid(sizeof (t_rute),sizeof (t_setting_param));
-//    QByteArray dd3 = data1.mid(sizeof (t_rute)+sizeof (t_setting_param),sizeof (t_statistik_rotat));
-//    memcpy(&tRuteData, dd1.data(), sizeof(t_rute));
-//    memcpy(&tSetParam, dd2.data(), sizeof(t_setting_param));
-//    memcpy(&tStatRotate, dd3.data(), sizeof(t_statistik_rotat));
-//    qDebug()<<"tipe param:" <<tRuteData.id_tipe_param <<
-//             "lines:" << tSetParam.fft_lines <<
-//             "fftovrlp:" << tSetParam.fft_overlap<<
-//             "fstart:" << tSetParam.freq_start<<
-//             "fstop:" << tSetParam.freq_stop;
-//    qDebug()<<"-------------------------------------------------";
-//    //qDebug()<<"size data 2" << data2.size();
-//    //qDebug()<<"size data 3" << data3.size();
-//    //qDebug()<<"size data 4" << data4.size();
-//    QByteArray d1 = data1.left(sizeof (t_rute));
-//    QByteArray d2 = data1.mid(sizeof (t_rute),sizeof (t_setting_param));
-//    QByteArray d3 = data1.mid(sizeof (t_rute)+sizeof (t_setting_param),sizeof (t_statistik_rotat));
-//    memcpy(&tRuteData4, d1.data(), sizeof(t_rute));
-//    memcpy(&tSetParam4, d2.data(), sizeof(t_setting_param));
-//    memcpy(&tStatRotate4, d3.data(), sizeof(t_statistik_rotat));
-//    qDebug()<<"tipe param:" <<tRuteData4.id_tipe_param <<
-//             "lines:" << tSetParam4.fft_lines <<
-//             "fftovrlp:" << tSetParam4.fft_overlap<<
-//             "fstart:" << tSetParam4.freq_start<<
-//             "fstop:" << tSetParam4.freq_stop;
-//    qDebug()<<"-------------------------------------------------";
-//    reply->set_size_all(request->size_all());
-//    std::cout<<"size data total data:" << request->datablob().size() << std::endl;
-//    std::cout<<"size:" << request->size_all() << std::endl;
-
+    else if(request->name()=="Selesai"){
+        std::cout << "Selesai Req " << request->name() << std::endl;
+        std::string prefix("Selesai");
+        reply->set_name(prefix);
+            //mulai masukin ke database/buffer
+        }
     return Status::OK;
   }
 };
@@ -150,6 +107,7 @@ void RunServer(uint16_t port) {
     builder.RegisterService(&service);
     std::unique_ptr<Server> server(builder.BuildAndStart());
     std::cout << "Server listening on " << server_address << std::endl;
+   // grpc::ServerAsyncResponseWriter<EchoResponse> response_writer()
     server->Wait();
 }
 

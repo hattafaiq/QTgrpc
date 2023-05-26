@@ -23,12 +23,15 @@ namespace _pbi = _pb::internal;
 namespace helloworld {
 PROTOBUF_CONSTEXPR HelloRequest::HelloRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.size_arr_)*/{}
+    /*decltype(_impl_.tipe_data_)*/{}
+  , /*decltype(_impl_._tipe_data_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.size_arr_)*/{}
   , /*decltype(_impl_._size_arr_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.timeepoch_)*/{}
+  , /*decltype(_impl_._timeepoch_cached_byte_size_)*/{0}
   , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.datablob_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.size_all_)*/0
-  , /*decltype(_impl_.timeepoch_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct HelloRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HelloRequestDefaultTypeInternal()
@@ -41,12 +44,15 @@ struct HelloRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HelloRequestDefaultTypeInternal _HelloRequest_default_instance_;
 PROTOBUF_CONSTEXPR HelloReply::HelloReply(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.size_arr_)*/{}
+    /*decltype(_impl_.tipe_data_)*/{}
+  , /*decltype(_impl_._tipe_data_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.size_arr_)*/{}
   , /*decltype(_impl_._size_arr_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.timeepoch_)*/{}
+  , /*decltype(_impl_._timeepoch_cached_byte_size_)*/{0}
   , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.datablob_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.size_all_)*/0
-  , /*decltype(_impl_.timeepoch_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct HelloReplyDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HelloReplyDefaultTypeInternal()
@@ -70,6 +76,7 @@ const uint32_t TableStruct_helloworld_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloRequest, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::helloworld::HelloRequest, _impl_.tipe_data_),
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloRequest, _impl_.size_all_),
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloRequest, _impl_.size_arr_),
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloRequest, _impl_.timeepoch_),
@@ -81,6 +88,7 @@ const uint32_t TableStruct_helloworld_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloReply, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::helloworld::HelloReply, _impl_.tipe_data_),
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloReply, _impl_.size_all_),
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloReply, _impl_.size_arr_),
   PROTOBUF_FIELD_OFFSET(::helloworld::HelloReply, _impl_.timeepoch_),
@@ -88,7 +96,7 @@ const uint32_t TableStruct_helloworld_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::helloworld::HelloRequest)},
-  { 11, -1, -1, sizeof(::helloworld::HelloReply)},
+  { 12, -1, -1, sizeof(::helloworld::HelloReply)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -97,18 +105,19 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_helloworld_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020helloworld.proto\022\nhelloworld\"e\n\014HelloR"
-  "equest\022\014\n\004name\030\001 \001(\t\022\020\n\010size_all\030\002 \001(\005\022\020"
-  "\n\010size_arr\030\003 \003(\005\022\021\n\ttimeEpoch\030\004 \001(\005\022\020\n\010d"
-  "atablob\030\005 \001(\014\"c\n\nHelloReply\022\014\n\004name\030\001 \001("
-  "\t\022\020\n\010size_all\030\002 \001(\005\022\020\n\010size_arr\030\003 \003(\005\022\021\n"
-  "\ttimeEpoch\030\004 \001(\005\022\020\n\010datablob\030\005 \001(\0142J\n\010Gr"
-  "eeter2\022>\n\010SayHello\022\030.helloworld.HelloReq"
-  "uest\032\026.helloworld.HelloReply\"\000b\006proto3"
+  "\n\020helloworld.proto\022\nhelloworld\"x\n\014HelloR"
+  "equest\022\014\n\004name\030\001 \001(\t\022\021\n\ttipe_data\030\002 \003(\005\022"
+  "\020\n\010size_all\030\003 \001(\005\022\020\n\010size_arr\030\004 \003(\005\022\021\n\tt"
+  "imeEpoch\030\005 \003(\005\022\020\n\010datablob\030\006 \001(\014\"v\n\nHell"
+  "oReply\022\014\n\004name\030\001 \001(\t\022\021\n\ttipe_data\030\002 \003(\005\022"
+  "\020\n\010size_all\030\003 \001(\005\022\020\n\010size_arr\030\004 \003(\005\022\021\n\tt"
+  "imeEpoch\030\005 \003(\005\022\020\n\010datablob\030\006 \001(\0142J\n\010Gree"
+  "ter2\022>\n\010SayHello\022\030.helloworld.HelloReque"
+  "st\032\026.helloworld.HelloReply\"\000b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_helloworld_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_helloworld_2eproto = {
-    false, false, 318, descriptor_table_protodef_helloworld_2eproto,
+    false, false, 356, descriptor_table_protodef_helloworld_2eproto,
     "helloworld.proto",
     &descriptor_table_helloworld_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_helloworld_2eproto::offsets,
@@ -139,12 +148,15 @@ HelloRequest::HelloRequest(const HelloRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   HelloRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.size_arr_){from._impl_.size_arr_}
+      decltype(_impl_.tipe_data_){from._impl_.tipe_data_}
+    , /*decltype(_impl_._tipe_data_cached_byte_size_)*/{0}
+    , decltype(_impl_.size_arr_){from._impl_.size_arr_}
     , /*decltype(_impl_._size_arr_cached_byte_size_)*/{0}
+    , decltype(_impl_.timeepoch_){from._impl_.timeepoch_}
+    , /*decltype(_impl_._timeepoch_cached_byte_size_)*/{0}
     , decltype(_impl_.name_){}
     , decltype(_impl_.datablob_){}
     , decltype(_impl_.size_all_){}
-    , decltype(_impl_.timeepoch_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -164,9 +176,7 @@ HelloRequest::HelloRequest(const HelloRequest& from)
     _this->_impl_.datablob_.Set(from._internal_datablob(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.size_all_, &from._impl_.size_all_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.timeepoch_) -
-    reinterpret_cast<char*>(&_impl_.size_all_)) + sizeof(_impl_.timeepoch_));
+  _this->_impl_.size_all_ = from._impl_.size_all_;
   // @@protoc_insertion_point(copy_constructor:helloworld.HelloRequest)
 }
 
@@ -175,12 +185,15 @@ inline void HelloRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.size_arr_){arena}
+      decltype(_impl_.tipe_data_){arena}
+    , /*decltype(_impl_._tipe_data_cached_byte_size_)*/{0}
+    , decltype(_impl_.size_arr_){arena}
     , /*decltype(_impl_._size_arr_cached_byte_size_)*/{0}
+    , decltype(_impl_.timeepoch_){arena}
+    , /*decltype(_impl_._timeepoch_cached_byte_size_)*/{0}
     , decltype(_impl_.name_){}
     , decltype(_impl_.datablob_){}
     , decltype(_impl_.size_all_){0}
-    , decltype(_impl_.timeepoch_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.name_.InitDefault();
@@ -204,7 +217,9 @@ HelloRequest::~HelloRequest() {
 
 inline void HelloRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.tipe_data_.~RepeatedField();
   _impl_.size_arr_.~RepeatedField();
+  _impl_.timeepoch_.~RepeatedField();
   _impl_.name_.Destroy();
   _impl_.datablob_.Destroy();
 }
@@ -219,12 +234,12 @@ void HelloRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.tipe_data_.Clear();
   _impl_.size_arr_.Clear();
+  _impl_.timeepoch_.Clear();
   _impl_.name_.ClearToEmpty();
   _impl_.datablob_.ClearToEmpty();
-  ::memset(&_impl_.size_all_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.timeepoch_) -
-      reinterpret_cast<char*>(&_impl_.size_all_)) + sizeof(_impl_.timeepoch_));
+  _impl_.size_all_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -244,36 +259,50 @@ const char* HelloRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         } else
           goto handle_unusual;
         continue;
-      // int32 size_all = 2;
+      // repeated int32 tipe_data = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_tipe_data(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          _internal_add_tipe_data(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 size_all = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.size_all_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 size_arr = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // repeated int32 size_arr = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_size_arr(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 24) {
+        } else if (static_cast<uint8_t>(tag) == 32) {
           _internal_add_size_arr(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 timeEpoch = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.timeepoch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+      // repeated int32 timeEpoch = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_timeepoch(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 40) {
+          _internal_add_timeepoch(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bytes datablob = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // bytes datablob = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_datablob();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -319,31 +348,43 @@ uint8_t* HelloRequest::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // int32 size_all = 2;
-  if (this->_internal_size_all() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_size_all(), target);
+  // repeated int32 tipe_data = 2;
+  {
+    int byte_size = _impl_._tipe_data_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          2, _internal_tipe_data(), byte_size, target);
+    }
   }
 
-  // repeated int32 size_arr = 3;
+  // int32 size_all = 3;
+  if (this->_internal_size_all() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_size_all(), target);
+  }
+
+  // repeated int32 size_arr = 4;
   {
     int byte_size = _impl_._size_arr_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          3, _internal_size_arr(), byte_size, target);
+          4, _internal_size_arr(), byte_size, target);
     }
   }
 
-  // int32 timeEpoch = 4;
-  if (this->_internal_timeepoch() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_timeepoch(), target);
+  // repeated int32 timeEpoch = 5;
+  {
+    int byte_size = _impl_._timeepoch_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          5, _internal_timeepoch(), byte_size, target);
+    }
   }
 
-  // bytes datablob = 5;
+  // bytes datablob = 6;
   if (!this->_internal_datablob().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_datablob(), target);
+        6, this->_internal_datablob(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -362,7 +403,21 @@ size_t HelloRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 size_arr = 3;
+  // repeated int32 tipe_data = 2;
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.tipe_data_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._tipe_data_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // repeated int32 size_arr = 4;
   {
     size_t data_size = ::_pbi::WireFormatLite::
       Int32Size(this->_impl_.size_arr_);
@@ -376,6 +431,20 @@ size_t HelloRequest::ByteSizeLong() const {
     total_size += data_size;
   }
 
+  // repeated int32 timeEpoch = 5;
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.timeepoch_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._timeepoch_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
   // string name = 1;
   if (!this->_internal_name().empty()) {
     total_size += 1 +
@@ -383,21 +452,16 @@ size_t HelloRequest::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // bytes datablob = 5;
+  // bytes datablob = 6;
   if (!this->_internal_datablob().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_datablob());
   }
 
-  // int32 size_all = 2;
+  // int32 size_all = 3;
   if (this->_internal_size_all() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_size_all());
-  }
-
-  // int32 timeEpoch = 4;
-  if (this->_internal_timeepoch() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_timeepoch());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -418,7 +482,9 @@ void HelloRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.tipe_data_.MergeFrom(from._impl_.tipe_data_);
   _this->_impl_.size_arr_.MergeFrom(from._impl_.size_arr_);
+  _this->_impl_.timeepoch_.MergeFrom(from._impl_.timeepoch_);
   if (!from._internal_name().empty()) {
     _this->_internal_set_name(from._internal_name());
   }
@@ -427,9 +493,6 @@ void HelloRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   }
   if (from._internal_size_all() != 0) {
     _this->_internal_set_size_all(from._internal_size_all());
-  }
-  if (from._internal_timeepoch() != 0) {
-    _this->_internal_set_timeepoch(from._internal_timeepoch());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -450,7 +513,9 @@ void HelloRequest::InternalSwap(HelloRequest* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.tipe_data_.InternalSwap(&other->_impl_.tipe_data_);
   _impl_.size_arr_.InternalSwap(&other->_impl_.size_arr_);
+  _impl_.timeepoch_.InternalSwap(&other->_impl_.timeepoch_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.name_, lhs_arena,
       &other->_impl_.name_, rhs_arena
@@ -459,12 +524,7 @@ void HelloRequest::InternalSwap(HelloRequest* other) {
       &_impl_.datablob_, lhs_arena,
       &other->_impl_.datablob_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(HelloRequest, _impl_.timeepoch_)
-      + sizeof(HelloRequest::_impl_.timeepoch_)
-      - PROTOBUF_FIELD_OFFSET(HelloRequest, _impl_.size_all_)>(
-          reinterpret_cast<char*>(&_impl_.size_all_),
-          reinterpret_cast<char*>(&other->_impl_.size_all_));
+  swap(_impl_.size_all_, other->_impl_.size_all_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HelloRequest::GetMetadata() const {
@@ -489,12 +549,15 @@ HelloReply::HelloReply(const HelloReply& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   HelloReply* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.size_arr_){from._impl_.size_arr_}
+      decltype(_impl_.tipe_data_){from._impl_.tipe_data_}
+    , /*decltype(_impl_._tipe_data_cached_byte_size_)*/{0}
+    , decltype(_impl_.size_arr_){from._impl_.size_arr_}
     , /*decltype(_impl_._size_arr_cached_byte_size_)*/{0}
+    , decltype(_impl_.timeepoch_){from._impl_.timeepoch_}
+    , /*decltype(_impl_._timeepoch_cached_byte_size_)*/{0}
     , decltype(_impl_.name_){}
     , decltype(_impl_.datablob_){}
     , decltype(_impl_.size_all_){}
-    , decltype(_impl_.timeepoch_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -514,9 +577,7 @@ HelloReply::HelloReply(const HelloReply& from)
     _this->_impl_.datablob_.Set(from._internal_datablob(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.size_all_, &from._impl_.size_all_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.timeepoch_) -
-    reinterpret_cast<char*>(&_impl_.size_all_)) + sizeof(_impl_.timeepoch_));
+  _this->_impl_.size_all_ = from._impl_.size_all_;
   // @@protoc_insertion_point(copy_constructor:helloworld.HelloReply)
 }
 
@@ -525,12 +586,15 @@ inline void HelloReply::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.size_arr_){arena}
+      decltype(_impl_.tipe_data_){arena}
+    , /*decltype(_impl_._tipe_data_cached_byte_size_)*/{0}
+    , decltype(_impl_.size_arr_){arena}
     , /*decltype(_impl_._size_arr_cached_byte_size_)*/{0}
+    , decltype(_impl_.timeepoch_){arena}
+    , /*decltype(_impl_._timeepoch_cached_byte_size_)*/{0}
     , decltype(_impl_.name_){}
     , decltype(_impl_.datablob_){}
     , decltype(_impl_.size_all_){0}
-    , decltype(_impl_.timeepoch_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.name_.InitDefault();
@@ -554,7 +618,9 @@ HelloReply::~HelloReply() {
 
 inline void HelloReply::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.tipe_data_.~RepeatedField();
   _impl_.size_arr_.~RepeatedField();
+  _impl_.timeepoch_.~RepeatedField();
   _impl_.name_.Destroy();
   _impl_.datablob_.Destroy();
 }
@@ -569,12 +635,12 @@ void HelloReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.tipe_data_.Clear();
   _impl_.size_arr_.Clear();
+  _impl_.timeepoch_.Clear();
   _impl_.name_.ClearToEmpty();
   _impl_.datablob_.ClearToEmpty();
-  ::memset(&_impl_.size_all_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.timeepoch_) -
-      reinterpret_cast<char*>(&_impl_.size_all_)) + sizeof(_impl_.timeepoch_));
+  _impl_.size_all_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -594,36 +660,50 @@ const char* HelloReply::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
         } else
           goto handle_unusual;
         continue;
-      // int32 size_all = 2;
+      // repeated int32 tipe_data = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_tipe_data(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          _internal_add_tipe_data(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 size_all = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.size_all_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 size_arr = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // repeated int32 size_arr = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_size_arr(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 24) {
+        } else if (static_cast<uint8_t>(tag) == 32) {
           _internal_add_size_arr(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 timeEpoch = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.timeepoch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+      // repeated int32 timeEpoch = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_timeepoch(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 40) {
+          _internal_add_timeepoch(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // bytes datablob = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // bytes datablob = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_datablob();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -669,31 +749,43 @@ uint8_t* HelloReply::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
-  // int32 size_all = 2;
-  if (this->_internal_size_all() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_size_all(), target);
+  // repeated int32 tipe_data = 2;
+  {
+    int byte_size = _impl_._tipe_data_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          2, _internal_tipe_data(), byte_size, target);
+    }
   }
 
-  // repeated int32 size_arr = 3;
+  // int32 size_all = 3;
+  if (this->_internal_size_all() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_size_all(), target);
+  }
+
+  // repeated int32 size_arr = 4;
   {
     int byte_size = _impl_._size_arr_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          3, _internal_size_arr(), byte_size, target);
+          4, _internal_size_arr(), byte_size, target);
     }
   }
 
-  // int32 timeEpoch = 4;
-  if (this->_internal_timeepoch() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_timeepoch(), target);
+  // repeated int32 timeEpoch = 5;
+  {
+    int byte_size = _impl_._timeepoch_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          5, _internal_timeepoch(), byte_size, target);
+    }
   }
 
-  // bytes datablob = 5;
+  // bytes datablob = 6;
   if (!this->_internal_datablob().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_datablob(), target);
+        6, this->_internal_datablob(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -712,7 +804,21 @@ size_t HelloReply::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 size_arr = 3;
+  // repeated int32 tipe_data = 2;
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.tipe_data_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._tipe_data_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // repeated int32 size_arr = 4;
   {
     size_t data_size = ::_pbi::WireFormatLite::
       Int32Size(this->_impl_.size_arr_);
@@ -726,6 +832,20 @@ size_t HelloReply::ByteSizeLong() const {
     total_size += data_size;
   }
 
+  // repeated int32 timeEpoch = 5;
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.timeepoch_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._timeepoch_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
   // string name = 1;
   if (!this->_internal_name().empty()) {
     total_size += 1 +
@@ -733,21 +853,16 @@ size_t HelloReply::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // bytes datablob = 5;
+  // bytes datablob = 6;
   if (!this->_internal_datablob().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_datablob());
   }
 
-  // int32 size_all = 2;
+  // int32 size_all = 3;
   if (this->_internal_size_all() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_size_all());
-  }
-
-  // int32 timeEpoch = 4;
-  if (this->_internal_timeepoch() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_timeepoch());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -768,7 +883,9 @@ void HelloReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PRO
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.tipe_data_.MergeFrom(from._impl_.tipe_data_);
   _this->_impl_.size_arr_.MergeFrom(from._impl_.size_arr_);
+  _this->_impl_.timeepoch_.MergeFrom(from._impl_.timeepoch_);
   if (!from._internal_name().empty()) {
     _this->_internal_set_name(from._internal_name());
   }
@@ -777,9 +894,6 @@ void HelloReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PRO
   }
   if (from._internal_size_all() != 0) {
     _this->_internal_set_size_all(from._internal_size_all());
-  }
-  if (from._internal_timeepoch() != 0) {
-    _this->_internal_set_timeepoch(from._internal_timeepoch());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -800,7 +914,9 @@ void HelloReply::InternalSwap(HelloReply* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.tipe_data_.InternalSwap(&other->_impl_.tipe_data_);
   _impl_.size_arr_.InternalSwap(&other->_impl_.size_arr_);
+  _impl_.timeepoch_.InternalSwap(&other->_impl_.timeepoch_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.name_, lhs_arena,
       &other->_impl_.name_, rhs_arena
@@ -809,12 +925,7 @@ void HelloReply::InternalSwap(HelloReply* other) {
       &_impl_.datablob_, lhs_arena,
       &other->_impl_.datablob_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(HelloReply, _impl_.timeepoch_)
-      + sizeof(HelloReply::_impl_.timeepoch_)
-      - PROTOBUF_FIELD_OFFSET(HelloReply, _impl_.size_all_)>(
-          reinterpret_cast<char*>(&_impl_.size_all_),
-          reinterpret_cast<char*>(&other->_impl_.size_all_));
+  swap(_impl_.size_all_, other->_impl_.size_all_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HelloReply::GetMetadata() const {

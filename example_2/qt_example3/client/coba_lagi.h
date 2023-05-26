@@ -3,6 +3,10 @@
 #include <QObject>
 #include <QDebug>
 #include <iostream>
+#include <QFile>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
 
 class coba_lagi : public QObject
 {
@@ -11,6 +15,8 @@ public:
     explicit coba_lagi(QObject *parent = nullptr);
     ~coba_lagi();
     void Test();
+    int flag_disconnect;
+    int flag_db;
 
 public slots:
 

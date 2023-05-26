@@ -82,6 +82,7 @@ class GreeterServiceImpl final : public Greeter::Service {
     }
     std::string stdString2(hard.constData(), hard.length());
     reply->set_datablob(stdString2);
+    std::cout << "Req " << request->name() << std::endl;
     qDebug()<<"done";
     return Status::OK;
   }
@@ -105,6 +106,7 @@ void RunServer(uint16_t port) {
     builder.RegisterService(&service);
     std::unique_ptr<Server> server(builder.BuildAndStart());
     std::cout << "Server listening on " << server_address << std::endl;
+
     server->Wait();
 }
 

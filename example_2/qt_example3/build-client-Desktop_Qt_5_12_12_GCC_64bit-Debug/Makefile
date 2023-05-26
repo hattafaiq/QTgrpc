@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_QML_DEBUG -DQT_SQL_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++1z -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../client -I. -I/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client/../../../../../grpc/grpc/include -I/../usr/local/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore -I. -I/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../client -I. -I/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client/../../../../../grpc/grpc/include -I/../usr/local/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++
 QMAKE         = /opt/Qt5.12.12/5.12.12/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = client1.0.0
 DISTDIR = /home/fh/grpc/proto_1/qt_example/example_2/qt_example3/build-client-Desktop_Qt_5_12_12_GCC_64bit-Debug/.tmp/client1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/opt/Qt5.12.12/5.12.12/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client/../../../../../grpc/grpc/lib/ -lre2 -lcares -lcrypto -lssl -lz -labsl_bad_any_cast_impl -labsl_bad_optional_access -labsl_bad_variant_access -labsl_base -labsl_city -labsl_civil_time -labsl_cord -labsl_cord_internal -labsl_cordz_functions -labsl_cordz_handle -labsl_cordz_info -labsl_cordz_sample_token -labsl_crc32c -labsl_crc_cord_state -labsl_crc_cpu_detect -labsl_crc_internal -labsl_debugging_internal -labsl_demangle_internal -labsl_die_if_null -labsl_examine_stack -labsl_exponential_biased -labsl_failure_signal_handler -labsl_flags -labsl_flags_commandlineflag -labsl_flags_commandlineflag_internal -labsl_flags_config -labsl_flags_internal -labsl_flags_marshalling -labsl_flags_parse -labsl_flags_private_handle_accessor -labsl_flags_program_name -labsl_flags_reflection -labsl_flags_usage -labsl_flags_usage_internal -labsl_graphcycles_internal -labsl_hash -labsl_hashtablez_sampler -labsl_int128 -labsl_leak_check -labsl_log_entry -labsl_log_flags -labsl_log_globals -labsl_log_initialize -labsl_log_internal_check_op -labsl_log_internal_conditions -labsl_log_internal_format -labsl_log_internal_globals -labsl_log_internal_log_sink_set -labsl_log_internal_message -labsl_log_severity -labsl_log_internal_proto -labsl_log_internal_nullguard -laddress_sorting -labsl_time_zone -labsl_time -labsl_throw_delegate -labsl_synchronization -labsl_symbolize -labsl_strings_internal -labsl_strings -labsl_str_format_internal -labsl_strerror -labsl_statusor -labsl_status -labsl_spinlock_wait -labsl_scoped_set_env -labsl_raw_logging_internal -labsl_raw_hash_set -labsl_random_seed_sequences -labsl_random_seed_gen_exception -labsl_random_internal_seed_material -labsl_random_internal_randen_slow -labsl_random_internal_randen_hwaes_impl -labsl_random_internal_randen_hwaes -labsl_random_internal_randen -labsl_random_internal_pool_urbg -labsl_random_internal_platform -labsl_random_distributions -labsl_random_internal_distribution_test_util -labsl_periodic_sampler -labsl_malloc_internal -labsl_low_level_hash -labsl_log_sink -L/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client/../../../../../../../../../usr/local/lib/ -lupb -lgrpc -lgrpc++ -lgpr -lgrpc++_alts -lgrpc_authorization_provider -lgrpc++_error_details -lgrpc_plugin_support -lgrpc++_reflection -lgrpc++_unsecure -lgrpc_unsecure -lprotobuf-lite -lprotoc -lprotobuf /opt/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Sql.so /opt/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so -lpthread   
+LIBS          = $(SUBLIBS) -L/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client/../../../../../grpc/grpc/lib/ -lre2 -lcares -lcrypto -lssl -lz -labsl_bad_any_cast_impl -labsl_bad_optional_access -labsl_bad_variant_access -labsl_base -labsl_city -labsl_civil_time -labsl_cord -labsl_cord_internal -labsl_cordz_functions -labsl_cordz_handle -labsl_cordz_info -labsl_cordz_sample_token -labsl_crc32c -labsl_crc_cord_state -labsl_crc_cpu_detect -labsl_crc_internal -labsl_debugging_internal -labsl_demangle_internal -labsl_die_if_null -labsl_examine_stack -labsl_exponential_biased -labsl_failure_signal_handler -labsl_flags -labsl_flags_commandlineflag -labsl_flags_commandlineflag_internal -labsl_flags_config -labsl_flags_internal -labsl_flags_marshalling -labsl_flags_parse -labsl_flags_private_handle_accessor -labsl_flags_program_name -labsl_flags_reflection -labsl_flags_usage -labsl_flags_usage_internal -labsl_graphcycles_internal -labsl_hash -labsl_hashtablez_sampler -labsl_int128 -labsl_leak_check -labsl_log_entry -labsl_log_flags -labsl_log_globals -labsl_log_initialize -labsl_log_internal_check_op -labsl_log_internal_conditions -labsl_log_internal_format -labsl_log_internal_globals -labsl_log_internal_log_sink_set -labsl_log_internal_message -labsl_log_severity -labsl_log_internal_proto -labsl_log_internal_nullguard -laddress_sorting -labsl_time_zone -labsl_time -labsl_throw_delegate -labsl_synchronization -labsl_symbolize -labsl_strings_internal -labsl_strings -labsl_str_format_internal -labsl_strerror -labsl_statusor -labsl_status -labsl_spinlock_wait -labsl_scoped_set_env -labsl_raw_logging_internal -labsl_raw_hash_set -labsl_random_seed_sequences -labsl_random_seed_gen_exception -labsl_random_internal_seed_material -labsl_random_internal_randen_slow -labsl_random_internal_randen_hwaes_impl -labsl_random_internal_randen_hwaes -labsl_random_internal_randen -labsl_random_internal_pool_urbg -labsl_random_internal_platform -labsl_random_distributions -labsl_random_internal_distribution_test_util -labsl_periodic_sampler -labsl_malloc_internal -labsl_low_level_hash -labsl_log_sink -L/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client/../../../../../../../../../usr/local/lib/ -lupb -lgrpc -lgrpc++ -lgpr -lgrpc++_alts -lgrpc_authorization_provider -lgrpc++_error_details -lgrpc_plugin_support -lgrpc++_reflection -lgrpc++_unsecure -lgrpc_unsecure -lprotobuf-lite -lprotoc -lprotobuf /opt/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Widgets.so /opt/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Gui.so /opt/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Sql.so /opt/Qt5.12.12/5.12.12/gcc_64/lib/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -55,12 +55,16 @@ OBJECTS_DIR   = ./
 SOURCES       = ../client/coba_lagi.cpp \
 		../client/helloworld.grpc.pb.cc \
 		../client/helloworld.pb.cc \
-		../client/main.cpp moc_coba_lagi.cpp
+		../client/main.cpp \
+		../client/mainwindow.cpp moc_coba_lagi.cpp \
+		moc_mainwindow.cpp
 OBJECTS       = coba_lagi.o \
 		helloworld.grpc.pb.o \
 		helloworld.pb.o \
 		main.o \
-		moc_coba_lagi.o
+		mainwindow.o \
+		moc_coba_lagi.o \
+		moc_mainwindow.o
 DIST          = /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/common/unix.conf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/common/linux.conf \
@@ -235,6 +239,7 @@ DIST          = /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_post.prf \
+		../client/.qmake.stash \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/default_pre.prf \
@@ -245,6 +250,8 @@ DIST          = /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/resources.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/moc.prf \
+		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/unix/opengl.prf \
+		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/uic.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/unix/thread.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qmake_use.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/file_copies.prf \
@@ -254,10 +261,12 @@ DIST          = /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/lex.prf \
 		../client/client.pro ../client/helloworld.grpc.pb.h \
 		../client/helloworld.pb.h \
-		../client/coba_lagi.h ../client/coba_lagi.cpp \
+		../client/coba_lagi.h \
+		../client/mainwindow.h ../client/coba_lagi.cpp \
 		../client/helloworld.grpc.pb.cc \
 		../client/helloworld.pb.cc \
-		../client/main.cpp
+		../client/main.cpp \
+		../client/mainwindow.cpp
 QMAKE_TARGET  = client
 DESTDIR       = 
 TARGET        = client
@@ -266,7 +275,7 @@ TARGET        = client
 first: all
 ####### Build rules
 
-client:  $(OBJECTS)  
+client: ui_mainwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../client/client.pro /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/qmake.conf /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_pre.prf \
@@ -443,6 +452,7 @@ Makefile: ../client/client.pro /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/q
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/default_pre.prf \
@@ -453,6 +463,8 @@ Makefile: ../client/client.pro /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/q
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/resources.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/moc.prf \
+		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/unix/opengl.prf \
+		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/uic.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/unix/thread.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qmake_use.prf \
 		/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/file_copies.prf \
@@ -636,6 +648,7 @@ Makefile: ../client/client.pro /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/q
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/default_pre.prf:
@@ -646,6 +659,8 @@ Makefile: ../client/client.pro /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++/q
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qt.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/resources.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/moc.prf:
+/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/unix/opengl.prf:
+/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/uic.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/unix/thread.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/qmake_use.prf:
 /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/file_copies.prf:
@@ -669,8 +684,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../client/helloworld.grpc.pb.h ../client/helloworld.pb.h ../client/coba_lagi.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../client/coba_lagi.cpp ../client/helloworld.grpc.pb.cc ../client/helloworld.pb.cc ../client/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../client/helloworld.grpc.pb.h ../client/helloworld.pb.h ../client/coba_lagi.h ../client/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../client/coba_lagi.cpp ../client/helloworld.grpc.pb.cc ../client/helloworld.pb.cc ../client/main.cpp ../client/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../client/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -702,9 +718,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -W -dM -E -o moc_predefs.h /opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_coba_lagi.cpp
+compiler_moc_header_make_all: moc_coba_lagi.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_coba_lagi.cpp
+	-$(DEL_FILE) moc_coba_lagi.cpp moc_mainwindow.cpp
 moc_coba_lagi.cpp: ../client/coba_lagi.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QObject \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobject.h \
@@ -771,6 +787,17 @@ moc_coba_lagi.cpp: ../client/coba_lagi.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlDatabase \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqldatabase.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsqlglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsql-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlQuery \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlquery.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlError \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlerror.h \
 		/../usr/local/include/grpcpp/grpcpp.h \
 		/../usr/local/include/grpc/grpc.h \
 		/../usr/local/include/grpc/support/port_platform.h \
@@ -968,19 +995,137 @@ moc_coba_lagi.cpp: ../client/coba_lagi.h \
 		/../usr/local/include/grpcpp/support/stub_options.h \
 		moc_predefs.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/bin/moc
-	/opt/Qt5.12.12/5.12.12/gcc_64/bin/moc $(DEFINES) --include /home/fh/grpc/proto_1/qt_example/example_2/qt_example3/build-client-Desktop_Qt_5_12_12_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++ -I/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client -I/home/fh/grpc/grpc/grpc/include -I/../usr/local/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../client/coba_lagi.h -o moc_coba_lagi.cpp
+	/opt/Qt5.12.12/5.12.12/gcc_64/bin/moc $(DEFINES) --include /home/fh/grpc/proto_1/qt_example/example_2/qt_example3/build-client-Desktop_Qt_5_12_12_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++ -I/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client -I/home/fh/grpc/grpc/grpc/include -I/../usr/local/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../client/coba_lagi.h -o moc_coba_lagi.cpp
+
+moc_mainwindow.cpp: ../client/mainwindow.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QMainWindow \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qmainwindow.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qwidget.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpaintdevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qcolor.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qrgb.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qrgba64.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qbrush.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qmatrix.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpolygon.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qline.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtransform.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qimage.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpixelformat.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpixmap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfont.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfontmetrics.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfontinfo.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qcursor.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtabwidget.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qicon.h \
+		moc_predefs.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/bin/moc
+	/opt/Qt5.12.12/5.12.12/gcc_64/bin/moc $(DEFINES) --include /home/fh/grpc/proto_1/qt_example/example_2/qt_example3/build-client-Desktop_Qt_5_12_12_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.12.12/5.12.12/gcc_64/mkspecs/linux-g++ -I/home/fh/grpc/proto_1/qt_example/example_2/qt_example3/client -I/home/fh/grpc/grpc/grpc/include -I/../usr/local/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql -I/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../client/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
+compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_clean:
+	-$(DEL_FILE) ui_mainwindow.h
+ui_mainwindow.h: ../client/mainwindow.ui \
+		/opt/Qt5.12.12/5.12.12/gcc_64/bin/uic
+	/opt/Qt5.12.12/5.12.12/gcc_64/bin/uic ../client/mainwindow.ui -o ui_mainwindow.h
+
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean 
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -1050,6 +1195,17 @@ coba_lagi.o: ../client/coba_lagi.cpp ../client/coba_lagi.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlDatabase \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqldatabase.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsqlglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsql-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlQuery \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlquery.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlError \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlerror.h \
 		/../usr/local/include/grpcpp/grpcpp.h \
 		/../usr/local/include/grpc/grpc.h \
 		/../usr/local/include/grpc/support/port_platform.h \
@@ -1539,6 +1695,17 @@ main.o: ../client/main.cpp /opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QCoreApp
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontiguouscache.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer.h \
 		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlDatabase \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqldatabase.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsqlglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsql-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlQuery \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlquery.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlError \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlerror.h \
 		/../usr/local/include/grpcpp/grpcpp.h \
 		/../usr/local/include/grpc/grpc.h \
 		/../usr/local/include/grpc/support/port_platform.h \
@@ -1734,17 +1901,48 @@ main.o: ../client/main.cpp /opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QCoreApp
 		/../usr/local/include/grpcpp/support/proto_buffer_reader.h \
 		/../usr/local/include/grpcpp/support/proto_buffer_writer.h \
 		/../usr/local/include/grpcpp/support/stub_options.h \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfile.h \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfiledevice.h \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlDatabase \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqldatabase.h \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsqlglobal.h \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qtsql-config.h \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlQuery \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlquery.h \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/QSqlError \
-		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtSql/qsqlerror.h \
+		../client/mainwindow.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QMainWindow \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qmainwindow.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qwidget.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpaintdevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qcolor.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qrgb.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qrgba64.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qbrush.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qmatrix.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpolygon.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qline.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtransform.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qimage.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpixelformat.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpixmap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfont.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfontmetrics.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfontinfo.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qcursor.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtabwidget.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qicon.h \
 		/../usr/local/include/absl/flags/flag.h \
 		/../usr/local/include/absl/flags/config.h \
 		/../usr/local/include/absl/flags/internal/flag.h \
@@ -1773,8 +1971,121 @@ main.o: ../client/main.cpp /opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QCoreApp
 		/../usr/local/include/absl/flags/declare.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../client/main.cpp
 
+mainwindow.o: ../client/mainwindow.cpp ../client/mainwindow.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QMainWindow \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qmainwindow.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qwidget.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringliteral.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringalgorithms.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringview.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpaintdevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpalette.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qcolor.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qrgb.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qrgba64.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qbrush.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qmatrix.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpolygon.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qline.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtransform.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpainterpath.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qimage.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpixelformat.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qpixmap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfont.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfontmetrics.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qfontinfo.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qcursor.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtabwidget.h \
+		/opt/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qicon.h \
+		ui_mainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../client/mainwindow.cpp
+
 moc_coba_lagi.o: moc_coba_lagi.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_coba_lagi.o moc_coba_lagi.cpp
+
+moc_mainwindow.o: moc_mainwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
 ####### Install
 

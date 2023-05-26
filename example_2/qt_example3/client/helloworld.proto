@@ -9,17 +9,19 @@ service Greeter2 {
 
 message HelloRequest {
   string name = 1;
-  int32 size_all = 2;
-  repeated int32 size_arr = 3;
-  int32 timeEpoch = 4;
-  bytes datablob = 5;
+  repeated int32 tipe_data = 2;
+  int32 size_all = 3;
+  repeated int32 size_arr = 4;
+  repeated int32 timeEpoch = 5;
+  bytes datablob = 6;
 }
 
 message HelloReply {
   string name = 1;
-  int32 size_all = 2;
-  repeated int32 size_arr = 3;
-  int32 timeEpoch = 4;
-  bytes datablob = 5;
+  repeated int32 tipe_data = 2;
+  int32 size_all = 3;
+  repeated int32 size_arr = 4;
+  repeated int32 timeEpoch = 5;
+  bytes datablob = 6;
 }
 

@@ -181,13 +181,36 @@ class HelloRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSizeArrFieldNumber = 3,
+    kTipeDataFieldNumber = 2,
+    kSizeArrFieldNumber = 4,
+    kTimeEpochFieldNumber = 5,
     kNameFieldNumber = 1,
-    kDatablobFieldNumber = 5,
-    kSizeAllFieldNumber = 2,
-    kTimeEpochFieldNumber = 4,
+    kDatablobFieldNumber = 6,
+    kSizeAllFieldNumber = 3,
   };
-  // repeated int32 size_arr = 3;
+  // repeated int32 tipe_data = 2;
+  int tipe_data_size() const;
+  private:
+  int _internal_tipe_data_size() const;
+  public:
+  void clear_tipe_data();
+  private:
+  int32_t _internal_tipe_data(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_tipe_data() const;
+  void _internal_add_tipe_data(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_tipe_data();
+  public:
+  int32_t tipe_data(int index) const;
+  void set_tipe_data(int index, int32_t value);
+  void add_tipe_data(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      tipe_data() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_tipe_data();
+
+  // repeated int32 size_arr = 4;
   int size_arr_size() const;
   private:
   int _internal_size_arr_size() const;
@@ -209,6 +232,28 @@ class HelloRequest final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_size_arr();
 
+  // repeated int32 timeEpoch = 5;
+  int timeepoch_size() const;
+  private:
+  int _internal_timeepoch_size() const;
+  public:
+  void clear_timeepoch();
+  private:
+  int32_t _internal_timeepoch(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_timeepoch() const;
+  void _internal_add_timeepoch(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_timeepoch();
+  public:
+  int32_t timeepoch(int index) const;
+  void set_timeepoch(int index, int32_t value);
+  void add_timeepoch(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      timeepoch() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_timeepoch();
+
   // string name = 1;
   void clear_name();
   const std::string& name() const;
@@ -223,7 +268,7 @@ class HelloRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // bytes datablob = 5;
+  // bytes datablob = 6;
   void clear_datablob();
   const std::string& datablob() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -237,22 +282,13 @@ class HelloRequest final :
   std::string* _internal_mutable_datablob();
   public:
 
-  // int32 size_all = 2;
+  // int32 size_all = 3;
   void clear_size_all();
   int32_t size_all() const;
   void set_size_all(int32_t value);
   private:
   int32_t _internal_size_all() const;
   void _internal_set_size_all(int32_t value);
-  public:
-
-  // int32 timeEpoch = 4;
-  void clear_timeepoch();
-  int32_t timeepoch() const;
-  void set_timeepoch(int32_t value);
-  private:
-  int32_t _internal_timeepoch() const;
-  void _internal_set_timeepoch(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:helloworld.HelloRequest)
@@ -263,12 +299,15 @@ class HelloRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > tipe_data_;
+    mutable std::atomic<int> _tipe_data_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > size_arr_;
     mutable std::atomic<int> _size_arr_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > timeepoch_;
+    mutable std::atomic<int> _timeepoch_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr datablob_;
     int32_t size_all_;
-    int32_t timeepoch_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -397,13 +436,36 @@ class HelloReply final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSizeArrFieldNumber = 3,
+    kTipeDataFieldNumber = 2,
+    kSizeArrFieldNumber = 4,
+    kTimeEpochFieldNumber = 5,
     kNameFieldNumber = 1,
-    kDatablobFieldNumber = 5,
-    kSizeAllFieldNumber = 2,
-    kTimeEpochFieldNumber = 4,
+    kDatablobFieldNumber = 6,
+    kSizeAllFieldNumber = 3,
   };
-  // repeated int32 size_arr = 3;
+  // repeated int32 tipe_data = 2;
+  int tipe_data_size() const;
+  private:
+  int _internal_tipe_data_size() const;
+  public:
+  void clear_tipe_data();
+  private:
+  int32_t _internal_tipe_data(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_tipe_data() const;
+  void _internal_add_tipe_data(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_tipe_data();
+  public:
+  int32_t tipe_data(int index) const;
+  void set_tipe_data(int index, int32_t value);
+  void add_tipe_data(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      tipe_data() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_tipe_data();
+
+  // repeated int32 size_arr = 4;
   int size_arr_size() const;
   private:
   int _internal_size_arr_size() const;
@@ -425,6 +487,28 @@ class HelloReply final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_size_arr();
 
+  // repeated int32 timeEpoch = 5;
+  int timeepoch_size() const;
+  private:
+  int _internal_timeepoch_size() const;
+  public:
+  void clear_timeepoch();
+  private:
+  int32_t _internal_timeepoch(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_timeepoch() const;
+  void _internal_add_timeepoch(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_timeepoch();
+  public:
+  int32_t timeepoch(int index) const;
+  void set_timeepoch(int index, int32_t value);
+  void add_timeepoch(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      timeepoch() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_timeepoch();
+
   // string name = 1;
   void clear_name();
   const std::string& name() const;
@@ -439,7 +523,7 @@ class HelloReply final :
   std::string* _internal_mutable_name();
   public:
 
-  // bytes datablob = 5;
+  // bytes datablob = 6;
   void clear_datablob();
   const std::string& datablob() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -453,22 +537,13 @@ class HelloReply final :
   std::string* _internal_mutable_datablob();
   public:
 
-  // int32 size_all = 2;
+  // int32 size_all = 3;
   void clear_size_all();
   int32_t size_all() const;
   void set_size_all(int32_t value);
   private:
   int32_t _internal_size_all() const;
   void _internal_set_size_all(int32_t value);
-  public:
-
-  // int32 timeEpoch = 4;
-  void clear_timeepoch();
-  int32_t timeepoch() const;
-  void set_timeepoch(int32_t value);
-  private:
-  int32_t _internal_timeepoch() const;
-  void _internal_set_timeepoch(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:helloworld.HelloReply)
@@ -479,12 +554,15 @@ class HelloReply final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > tipe_data_;
+    mutable std::atomic<int> _tipe_data_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > size_arr_;
     mutable std::atomic<int> _size_arr_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > timeepoch_;
+    mutable std::atomic<int> _timeepoch_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr datablob_;
     int32_t size_all_;
-    int32_t timeepoch_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -551,7 +629,54 @@ inline void HelloRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:helloworld.HelloRequest.name)
 }
 
-// int32 size_all = 2;
+// repeated int32 tipe_data = 2;
+inline int HelloRequest::_internal_tipe_data_size() const {
+  return _impl_.tipe_data_.size();
+}
+inline int HelloRequest::tipe_data_size() const {
+  return _internal_tipe_data_size();
+}
+inline void HelloRequest::clear_tipe_data() {
+  _impl_.tipe_data_.Clear();
+}
+inline int32_t HelloRequest::_internal_tipe_data(int index) const {
+  return _impl_.tipe_data_.Get(index);
+}
+inline int32_t HelloRequest::tipe_data(int index) const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloRequest.tipe_data)
+  return _internal_tipe_data(index);
+}
+inline void HelloRequest::set_tipe_data(int index, int32_t value) {
+  _impl_.tipe_data_.Set(index, value);
+  // @@protoc_insertion_point(field_set:helloworld.HelloRequest.tipe_data)
+}
+inline void HelloRequest::_internal_add_tipe_data(int32_t value) {
+  _impl_.tipe_data_.Add(value);
+}
+inline void HelloRequest::add_tipe_data(int32_t value) {
+  _internal_add_tipe_data(value);
+  // @@protoc_insertion_point(field_add:helloworld.HelloRequest.tipe_data)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloRequest::_internal_tipe_data() const {
+  return _impl_.tipe_data_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloRequest::tipe_data() const {
+  // @@protoc_insertion_point(field_list:helloworld.HelloRequest.tipe_data)
+  return _internal_tipe_data();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloRequest::_internal_mutable_tipe_data() {
+  return &_impl_.tipe_data_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloRequest::mutable_tipe_data() {
+  // @@protoc_insertion_point(field_mutable_list:helloworld.HelloRequest.tipe_data)
+  return _internal_mutable_tipe_data();
+}
+
+// int32 size_all = 3;
 inline void HelloRequest::clear_size_all() {
   _impl_.size_all_ = 0;
 }
@@ -571,7 +696,7 @@ inline void HelloRequest::set_size_all(int32_t value) {
   // @@protoc_insertion_point(field_set:helloworld.HelloRequest.size_all)
 }
 
-// repeated int32 size_arr = 3;
+// repeated int32 size_arr = 4;
 inline int HelloRequest::_internal_size_arr_size() const {
   return _impl_.size_arr_.size();
 }
@@ -618,27 +743,54 @@ HelloRequest::mutable_size_arr() {
   return _internal_mutable_size_arr();
 }
 
-// int32 timeEpoch = 4;
+// repeated int32 timeEpoch = 5;
+inline int HelloRequest::_internal_timeepoch_size() const {
+  return _impl_.timeepoch_.size();
+}
+inline int HelloRequest::timeepoch_size() const {
+  return _internal_timeepoch_size();
+}
 inline void HelloRequest::clear_timeepoch() {
-  _impl_.timeepoch_ = 0;
+  _impl_.timeepoch_.Clear();
 }
-inline int32_t HelloRequest::_internal_timeepoch() const {
-  return _impl_.timeepoch_;
+inline int32_t HelloRequest::_internal_timeepoch(int index) const {
+  return _impl_.timeepoch_.Get(index);
 }
-inline int32_t HelloRequest::timeepoch() const {
+inline int32_t HelloRequest::timeepoch(int index) const {
   // @@protoc_insertion_point(field_get:helloworld.HelloRequest.timeEpoch)
-  return _internal_timeepoch();
+  return _internal_timeepoch(index);
 }
-inline void HelloRequest::_internal_set_timeepoch(int32_t value) {
-  
-  _impl_.timeepoch_ = value;
-}
-inline void HelloRequest::set_timeepoch(int32_t value) {
-  _internal_set_timeepoch(value);
+inline void HelloRequest::set_timeepoch(int index, int32_t value) {
+  _impl_.timeepoch_.Set(index, value);
   // @@protoc_insertion_point(field_set:helloworld.HelloRequest.timeEpoch)
 }
+inline void HelloRequest::_internal_add_timeepoch(int32_t value) {
+  _impl_.timeepoch_.Add(value);
+}
+inline void HelloRequest::add_timeepoch(int32_t value) {
+  _internal_add_timeepoch(value);
+  // @@protoc_insertion_point(field_add:helloworld.HelloRequest.timeEpoch)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloRequest::_internal_timeepoch() const {
+  return _impl_.timeepoch_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloRequest::timeepoch() const {
+  // @@protoc_insertion_point(field_list:helloworld.HelloRequest.timeEpoch)
+  return _internal_timeepoch();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloRequest::_internal_mutable_timeepoch() {
+  return &_impl_.timeepoch_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloRequest::mutable_timeepoch() {
+  // @@protoc_insertion_point(field_mutable_list:helloworld.HelloRequest.timeEpoch)
+  return _internal_mutable_timeepoch();
+}
 
-// bytes datablob = 5;
+// bytes datablob = 6;
 inline void HelloRequest::clear_datablob() {
   _impl_.datablob_.ClearToEmpty();
 }
@@ -742,7 +894,54 @@ inline void HelloReply::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:helloworld.HelloReply.name)
 }
 
-// int32 size_all = 2;
+// repeated int32 tipe_data = 2;
+inline int HelloReply::_internal_tipe_data_size() const {
+  return _impl_.tipe_data_.size();
+}
+inline int HelloReply::tipe_data_size() const {
+  return _internal_tipe_data_size();
+}
+inline void HelloReply::clear_tipe_data() {
+  _impl_.tipe_data_.Clear();
+}
+inline int32_t HelloReply::_internal_tipe_data(int index) const {
+  return _impl_.tipe_data_.Get(index);
+}
+inline int32_t HelloReply::tipe_data(int index) const {
+  // @@protoc_insertion_point(field_get:helloworld.HelloReply.tipe_data)
+  return _internal_tipe_data(index);
+}
+inline void HelloReply::set_tipe_data(int index, int32_t value) {
+  _impl_.tipe_data_.Set(index, value);
+  // @@protoc_insertion_point(field_set:helloworld.HelloReply.tipe_data)
+}
+inline void HelloReply::_internal_add_tipe_data(int32_t value) {
+  _impl_.tipe_data_.Add(value);
+}
+inline void HelloReply::add_tipe_data(int32_t value) {
+  _internal_add_tipe_data(value);
+  // @@protoc_insertion_point(field_add:helloworld.HelloReply.tipe_data)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloReply::_internal_tipe_data() const {
+  return _impl_.tipe_data_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloReply::tipe_data() const {
+  // @@protoc_insertion_point(field_list:helloworld.HelloReply.tipe_data)
+  return _internal_tipe_data();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloReply::_internal_mutable_tipe_data() {
+  return &_impl_.tipe_data_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloReply::mutable_tipe_data() {
+  // @@protoc_insertion_point(field_mutable_list:helloworld.HelloReply.tipe_data)
+  return _internal_mutable_tipe_data();
+}
+
+// int32 size_all = 3;
 inline void HelloReply::clear_size_all() {
   _impl_.size_all_ = 0;
 }
@@ -762,7 +961,7 @@ inline void HelloReply::set_size_all(int32_t value) {
   // @@protoc_insertion_point(field_set:helloworld.HelloReply.size_all)
 }
 
-// repeated int32 size_arr = 3;
+// repeated int32 size_arr = 4;
 inline int HelloReply::_internal_size_arr_size() const {
   return _impl_.size_arr_.size();
 }
@@ -809,27 +1008,54 @@ HelloReply::mutable_size_arr() {
   return _internal_mutable_size_arr();
 }
 
-// int32 timeEpoch = 4;
+// repeated int32 timeEpoch = 5;
+inline int HelloReply::_internal_timeepoch_size() const {
+  return _impl_.timeepoch_.size();
+}
+inline int HelloReply::timeepoch_size() const {
+  return _internal_timeepoch_size();
+}
 inline void HelloReply::clear_timeepoch() {
-  _impl_.timeepoch_ = 0;
+  _impl_.timeepoch_.Clear();
 }
-inline int32_t HelloReply::_internal_timeepoch() const {
-  return _impl_.timeepoch_;
+inline int32_t HelloReply::_internal_timeepoch(int index) const {
+  return _impl_.timeepoch_.Get(index);
 }
-inline int32_t HelloReply::timeepoch() const {
+inline int32_t HelloReply::timeepoch(int index) const {
   // @@protoc_insertion_point(field_get:helloworld.HelloReply.timeEpoch)
-  return _internal_timeepoch();
+  return _internal_timeepoch(index);
 }
-inline void HelloReply::_internal_set_timeepoch(int32_t value) {
-  
-  _impl_.timeepoch_ = value;
-}
-inline void HelloReply::set_timeepoch(int32_t value) {
-  _internal_set_timeepoch(value);
+inline void HelloReply::set_timeepoch(int index, int32_t value) {
+  _impl_.timeepoch_.Set(index, value);
   // @@protoc_insertion_point(field_set:helloworld.HelloReply.timeEpoch)
 }
+inline void HelloReply::_internal_add_timeepoch(int32_t value) {
+  _impl_.timeepoch_.Add(value);
+}
+inline void HelloReply::add_timeepoch(int32_t value) {
+  _internal_add_timeepoch(value);
+  // @@protoc_insertion_point(field_add:helloworld.HelloReply.timeEpoch)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloReply::_internal_timeepoch() const {
+  return _impl_.timeepoch_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+HelloReply::timeepoch() const {
+  // @@protoc_insertion_point(field_list:helloworld.HelloReply.timeEpoch)
+  return _internal_timeepoch();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloReply::_internal_mutable_timeepoch() {
+  return &_impl_.timeepoch_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+HelloReply::mutable_timeepoch() {
+  // @@protoc_insertion_point(field_mutable_list:helloworld.HelloReply.timeEpoch)
+  return _internal_mutable_timeepoch();
+}
 
-// bytes datablob = 5;
+// bytes datablob = 6;
 inline void HelloReply::clear_datablob() {
   _impl_.datablob_.ClearToEmpty();
 }
